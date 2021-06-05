@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-5Z53G49');</script>
+    <!-- End Google Tag Manager -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lab 8 - E2E Testing</title>
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="./styles/style.css">
+
+  <!-- Favicon -->
+  <link rel="icon" href="./styles/favicon.ico">
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5Z53G49"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+  <header>
+    <h1>Journal Entries</h1>
+    <img src="./styles/settings.svg" alt="settings" width=40 height=40>
+  </header>
+
+  <main class="double-column"></main>
+
+  <entry-page></entry-page>
+
+  <!-- journal-entry web component -->
+  <script src="./components/journal-entry.js" type="module"></script>
+  <script src="./components/entry-page.js" type="module"></script>
+
+  <!-- Router Script -->
+  <script src="./scripts/router.js" type="module"></script>
+
+  <!-- Main Script -->
+  <script src="./scripts/script.js" type="module"></script>
+</body>
+
+<!-- <script src="//cdn.split.io/sdk/split-10.15.5.min.js"></script> -->
+
+
+ 
+
+  <head>
+    <title>Split SDK quickstart example.</title>
+  </head>
+  <body>
+    <h1>Split SDK quickstart example.</h1>
+
+    <!-- Some polyfills to ensure we have promises. -->
+    <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
+    <!-- Split SDK loaded via CDN. -->
+    <script src="//cdn.split.io/sdk/split-10.15.7.min.js"></script>
+    <!-- Our custom script. -->
+    <script type="text/javascript">
+    function makeid() {
+      var text = "";
+      var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+      for (var i = 0; i < 5; i++)
+        text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+      return text;
+    }
+
+    var factory = splitio({ 
+    core: {
+    authorizationKey: 'ds3l6pj8d3e1glskdsau7d2dv9ur9512j8oc',
+    // your internal user id, or the account id that 
+    // the user belongs to. 
+    // This coudld also be a cookie you generate
+    // for anonymous users
+    key: makeid()
+      
+      }
+    });
+    var client = factory.client();
+
+      client.on(client.Event.SDK_READY, function() {
+        var treatment = client.getTreatment('background_color');
+        if (treatment === 'on') {
+          // Insert code for on treatment
+          document.querySelector("body").style.background = "LightSkyBlue";
+
+        } else if (treatment === 'off') {
+          // Insert code for off treatment
+          document.querySelector("body").style.background = "#EFECCA";
+    
+        } else {
+          // Insert code for control treatment
+        }
+
+        client.destroy().then(function() {
+          // Your data is successfully flushed.
+        });
+      });
+
+      
+    </script>
+  </body>
+
+
+
+</html>
