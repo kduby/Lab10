@@ -15,4 +15,4 @@ https://app.split.io/org/a9f3aa70-c4c2-11eb-bcaf-0e264c9979ad/ws/aa0313c0-c4c2-1
 For Split 2 the user should be getting a light blue background 50% of the time and yellow for the other 50% of the time. This type of A/B testing is used to see which kind of theme users prefer more.
 
 ## Part 3
-![image](Part3.png)
+![image](Part3.PNG)
